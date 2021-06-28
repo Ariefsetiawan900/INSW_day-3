@@ -26,7 +26,7 @@ const Navbar = () => {
               </NavLink>
             </li>
           </ul>
-          <Link className="btn btn-outline-success" exact to="/products/add">
+          <Link className="btn btn-outline-success" exact to="/tambah">
             Add Product
           </Link>
         </div>

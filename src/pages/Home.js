@@ -7,7 +7,7 @@ const Home = () => {
 
   const loadUsers = async () => {
     try {
-      const result = await axios.get("https://27dfda22cc14.ngrok.io/karyawan");
+      const result = await axios.get("http://044b2d67f359.ngrok.io/karyawan");
       console.log(result.data.data);
       setUsers(result.data.data);
     } catch (error) {
@@ -17,7 +17,7 @@ const Home = () => {
 
   const deleteUser = async (nik) => {
     try {
-      await axios.delete(`https://27dfda22cc14.ngrok.io/karyawan/${nik}`);
+      await axios.delete(`http://044b2d67f359.ngrok.io/karyawan/${nik}`);
 
       setUsers(users.filter((user) => user.nik !== nik));
       alert("Data berhasil dihapus");
@@ -50,7 +50,7 @@ const Home = () => {
                 <td>{user.phone}</td>
                 <td>{user.email}</td>
                 <td>
-                  <Link style={{ marginRight: "10px" }}>
+                  <Link style={{ marginRight: "10px" }} to={`edit/${user.nik}`}>
                     <i class="bi bi-pencil-square text-warning fs-4"></i>
                   </Link>
                   <Link>
